@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Exploiting Diffusion Prior for Generalizable Pixel-Level Semantic Prediction">
+  <meta name="keywords" content="diffusion models as prior, dmp, DMP">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diffusion Models as Prior</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/main.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Exploiting Diffusion Prior for Generalizable Pixel-Level Semantic Prediction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://shinying.github.io">Hsin-Ying Lee</a><sup>1</sup>, </span>
+            <span class="author-block">
+              <a href="https://hytseng0509.github.io">Hong-Yu Tseng</a><sup>2</sup>, </span>
+            <span class="author-block">
+              <a href="http://hsinyinglee.com">Hsin-Ying Lee</a><sup>3</sup>, </span>
+            <span class="author-block">
+              <a href="http://faculty.ucmerced.edu/mhyang">Ming-Hsuan Yang</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, Merced, </span>
+            <span class="author-block"><sup>2</sup>Meta, </span>
+            <span class="author-block"><sup>3</sup>Snap Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- <!-- PDF Link. -->
+              <!-- <span class="link-block"> -->
+              <!--   <a href="https://arxiv.org" -->
+              <!--      class="external-link button is-normal is-rounded is-dark"> -->
+              <!--     <span class="icon"> -->
+              <!--         <i class="fas fa-file-pdf"></i> -->
+              <!--     </span> -->
+              <!--     <span>Paper</span> -->
+              <!--   </a> -->
+              <!-- </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- <!-- Video Link. --> 
+              <!-- <span class="link-block"> -->
+              <!--   <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA" -->
+              <!--      class="external-link button is-normal is-rounded is-dark"> -->
+              <!--     <span class="icon"> -->
+              <!--         <i class="fab fa-youtube"></i> -->
+              <!--     </span> -->
+              <!--     <span>Video</span> -->
+              <!--   </a> -->
+              <!-- </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/shinying/dmp"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block"> -->
+              <!--   <a href="https://github.com/google/nerfies/releases/tag/0.1" -->
+              <!--      class="external-link button is-normal is-rounded is-dark"> -->
+              <!--     <span class="icon"> -->
+              <!--         <i class="far fa-images"></i> -->
+              <!--     </span> -->
+              <!--     <span>Data</span> -->
+              <!--     </a> -->
+              <!-- </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container">
+    <div class="hero-body">
+      <img src="static/images/teaser.webp" alt="teaser">
+      <h2 class="subtitle has-text-centered">
+        (left) We leverage pre-trained text-to-image diffusion models as a prior for various pixel-level semantic prediction tasks.<br>
+        (right) With only limited-domain training data, the model performs favorably against SoTA predictors.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>Contents generated by recent advanced Text-to-Image (T2I) diffusion models are sometimes too imaginative for existing off-the-shelf property semantic predictors to estimate due to the immitigable domain gap. We introduce Diffusion Models as Prior (DMP), a pipeline utilizing pre-trained T2I models as a prior for pixel-level semantic prediction tasks. </p>
+          <p>To address the misalignment between deterministic prediction tasks and stochastic T2I models, we reformulate the diffusion process through a sequence of interpolations, establishing a deterministic mapping between input RGB images and output prediction distributions. To preserve generalizability, we use low-rank adaptation to fine-tune pre-trained models. Extensive experiments across five tasks, including 3D property estimation, semantic segmentation, and intrinsic image decomposition, showcase the efficacy of DMP. Despite limited-domain training data, the approach yields faithful estimations for arbitrary images, surpassing existing state-of-the-art algorithms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Abstract. -->
+
+<!-- Paper video. -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Video</h2>
+          <video-js
+            id="intro-video"
+            class="video-js publication-video"
+            controls
+            preload="auto"
+          >
+            <source src="static/videos/intro.mp4" type="video/mp4" />
+            <p class="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a
+              web browser that
+              <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+          </video-js>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Paper video. -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Results</h2>
+        <div class="content has-text-justified">
+          <p>We train the model with 10K bedroom images and evaluate out-of-domain performance of 3D properties and intrinsic images with diverse scenes and arbitrary images. Out-of-domain segmentation is evaluated with bedroom images in various styles. DMP gives faithful estimation, even on the images where the off-the-shelf schemes fail to handle.</p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h4 class="title is-4">3D Properties</h4>
+        <img src="static/images/superood.webp" alt="results of 3d properties">
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h4 class="title is-4">Segmentation</h4>
+        <img src="static/images/result-seg.webp" alt="results of segmentation">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Applications</h2>
+        <div class="content has-text-justified">
+          <p>Surface normals and depths facilitate many vision tasks. We show the examples of <a target="_blank" rel="noopener noreferrer" href="https://shihmengli.github.io/3D-Photo-Inpainting">3D photo inpainting</a>. Compared to the default depth estimator (left), the resulting videos produced with the depth maps generated by DMP (right) have more accurate depth relationships between the objects.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <video poster="" id="steve" autoplay muted loop playsinline>
+            <source src="./static/videos/1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="chair-tp" autoplay muted loop playsinline>
+            <source src="./static/videos/2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="shiba" autoplay muted loop playsinline>
+            <source src="./static/videos/3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="fullbody" autoplay muted loop playsinline>
+            <source src="./static/videos/4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="blueshirt" autoplay muted loop playsinline>
+            <source src="./static/videos/5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="mask" autoplay muted loop playsinline>
+            <source src="./static/videos/6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="coffee" autoplay muted loop playsinline>
+            <source src="./static/videos/7.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="toby" autoplay muted loop playsinline>
+            <source src="./static/videos/8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="toby" autoplay muted loop playsinline>
+            <source src="./static/videos/9.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="toby" autoplay muted loop playsinline>
+            <source src="./static/videos/10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title has-text-centered">BibTeX</h2>
+    <pre><code>@article{lee2023dmp
+  author    = {Lee, Hsin-Ying and Tseng, Hong-Yu and Lee, Hsin-Ying and Yang, Ming-Hsuan},
+  title     = {Exploiting Diffusion Prior for Generalizable Pixel-Level Semantic Prediction},
+  journal   = {arXiv preprint arXiv:},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>Built on <a href="https://nerfies.github.io">this template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/main.js"></script>
+
+</body>
+</html>
