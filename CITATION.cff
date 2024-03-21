@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: >-
+  Exploiting Diffusion Prior for Generalizable Dense Prediction
+message: >-
+  If you find this work interesting, please cite it as below.
+authors:
+  - given-names: Hsin-Ying
+    family-names: Lee
+    affiliation: UC Merced
+  - given-names: Hung-Yu
+    family-names: Tseng
+    affiliation: Meta
+  - given-names: Hsin-Ying
+    family-names: Lee
+    affiliation: Snap
+  - given-names: Ming-Hsuan
+    family-names: Yang
+    affiliation: UC Merced
+preferred-citation:
+  type: conference-paper
+  title: Exploiting Diffusion Prior for Generalizable Dense Prediction
+  authors:
+  - given-names: Hsin-Ying
+    family-names: Lee
+    affiliation: UC Merced
+  - given-names: Hung-Yu
+    family-names: Tseng
+    affiliation: Meta
+  - given-names: Hsin-Ying
+    family-names: Lee
+    affiliation: Snap
+  - given-names: Ming-Hsuan
+    family-names: Yang
+    affiliation: UC Merced
+  year: 2024
+  collection-title: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)
