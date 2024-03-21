@@ -1,0 +1,6 @@
+# Diffusion
+pretrained: "CompVis/stable-diffusion-v1-4"
+guidance_scale: 7.5
+target_guidance_scale: 2
+num_inference_steps: 50
+target_inference_steps: 5
