@@ -78,7 +78,7 @@ class TrainDataset(torch.utils.data.Dataset):
         if not image.mode == 'RGB':
             image = image.convert('RGB')
 
-        trg_key = entry['file_name']
+        trg_key = entry['file_name'].split('.')[0]
         if self.target_extra_key:
             trg_key += f'-{self.target_extra_key}'
         if self.target_mode == 'RGB':
