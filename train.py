@@ -292,6 +292,7 @@ def main():
             args.pretrained_model_name_or_path,
             self_attn_only=args.self_attn_only,
             disable_prompts=args.disable_prompts,
+            prediction_type=args.prediction_type,
             mixed_precision=accelerator.mixed_precision,
             enable_xformers=args.enable_xformers_memory_efficient_attention,
             device=accelerator.device,
