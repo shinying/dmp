@@ -38,7 +38,7 @@ We provide the model weights of five tasks for reproducing the results in the pa
 
 Besides, for normal and depth prediction, we provide the weights trained with more diverse scenes and without prompts, which are more suitable for practical use cases.
 
-Download the weights from [this google drive](https://drive.google.com/drive/folders/1R7H2x3ETkxs5bRx9gzKo4ngxtFJfGPAv?usp=sharing) and place them in the root directory.tool
+Download the weights from [this google drive](https://drive.google.com/drive/folders/1R7H2x3ETkxs5bRx9gzKo4ngxtFJfGPAv?usp=sharing) and place them in the root directory.
 
 ### Run
 
